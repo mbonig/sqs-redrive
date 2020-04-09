@@ -3,7 +3,7 @@ import {NodejsFunction} from "@aws-cdk/aws-lambda-nodejs";
 import {IQueue} from "@aws-cdk/aws-sqs";
 
 interface SqsRedriveProps {
-    DeadLetterQueue: IQueue;
+    DeadLetterQueue?: IQueue;
     MainQueue: IQueue;
 }
 
@@ -13,13 +13,14 @@ export class SqsRedrive extends Construct {
         super(scope, id);
 
         const lambda = new NodejsFunction(this, 'queue-redrive', {
+            functionName: id,
             environment: {
                 QUEUE_URL: props.MainQueue.queueUrl,
-                DLQ_URL: props.DeadLetterQueue.queueUrl
+                DLQ_URL: props.DeadLetterQueue!.queueUrl
             }
         });
 
-        props.DeadLetterQueue.grantConsumeMessages(lambda);
+        props.DeadLetterQueue!.grantConsumeMessages(lambda);
         props.MainQueue.grantSendMessages(lambda);
 
     }
