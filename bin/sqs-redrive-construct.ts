@@ -1,7 +1,14 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { SqsRedriveConstructStack } from '../lib/sqs-redrive-construct-stack';
+import {SqsRedrive} from '../lib/sqs-redrive';
+import {Queue} from "@aws-cdk/aws-sqs";
 
 const app = new cdk.App();
-new SqsRedriveConstructStack(app, 'SqsRedriveConstructStack');
+const stack = new cdk.Stack(app, 'test-stack');
+let mainQueue = new Queue(stack, 'main-queue');
+let deadLetterQueue = new Queue(stack, 'dlq-queue');
+new SqsRedrive(stack, 'SqsRedriveConstructStack', {
+    MainQueue: mainQueue,
+    DeadLetterQueue: deadLetterQueue
+});

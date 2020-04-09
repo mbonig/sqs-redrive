@@ -1,27 +1,71 @@
 {
   "name": "sqs-redrive-construct",
+  "description": "A redrive construct to use with an SQS queue and it's dead letter queue",
+  "main": "lib/sqs-redrive-construct-stack.js",
+  "types": "lib/sqs-redrive-construct-stack.d.ts",
   "version": "0.1.0",
   "bin": {
     "sqs-redrive-construct": "bin/sqs-redrive-construct.js"
   },
   "scripts": {
+    "jsii:build": "jsii",
+    "jsii:watch:build": "jsii -w",
+    "jsii:package": "jsii-pacmak",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
   },
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "python": {
+        "distName": "mbonig.sqs-redrive",
+        "module": "mbonig.sqs_redrive"
+      }
+    }
+  },
+  "keywords": [
+    "cdk",
+    "sqs",
+    "dead-letter-queues",
+    "redrive"
+  ],
+  "repository": {
+    "url": "https://github.com/mbonig/sqs-redrive",
+    "type": "git"
+  },
+  "author": {
+    "name": "Matthew Bonig",
+    "email": "matthew.bonig@gmail.com",
+    "url": "https://matthewbonig.com"
+  },
+  "awscdkio": {
+    "twitter": "mattbonig"
+  },
+  "license": "MIT",
   "devDependencies": {
-    "@aws-cdk/assert": "1.27.0",
+    "@aws-cdk/assert": "1.31.0",
     "@types/jest": "^24.0.22",
     "@types/node": "10.17.5",
     "jest": "^24.9.0",
+    "jsii": "^0.22.0",
+    "jsii-pacmak": "^0.22.0",
     "ts-jest": "^24.1.0",
-    "aws-cdk": "1.27.0",
+    "aws-cdk": "1.31.0",
+    "parcel-bundler": "^1.12.4",
+
     "ts-node": "^8.1.0",
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@aws-cdk/core": "1.27.0",
-    "source-map-support": "^0.5.16"
+    "@aws-cdk/aws-lambda-nodejs": "^1.31.0",
+    "@aws-cdk/aws-sqs": "^1.31.0",
+    "@aws-cdk/core": "1.31.0"
+  },
+  "peerDependencies": {
+    "@aws-cdk/core": "1.31.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.31.0",
+    "@aws-cdk/aws-sqs": "^1.31.0"
   }
 }
