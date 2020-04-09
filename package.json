@@ -8,10 +8,10 @@
     "sqs-redrive-construct": "bin/sqs-redrive-construct.js"
   },
   "scripts": {
-    "jsii:build": "jsii",
+    "build": "jsii",
     "watch:build": "jsii -w",
     "package": "jsii-pacmak",
-    "build": "tsc",
+    "tsc:build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
     "cdk": "cdk"
