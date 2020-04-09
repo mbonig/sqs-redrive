@@ -9,8 +9,8 @@
   },
   "scripts": {
     "jsii:build": "jsii",
-    "jsii:watch:build": "jsii -w",
-    "jsii:package": "jsii-pacmak",
+    "watch:build": "jsii -w",
+    "package": "jsii-pacmak",
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
