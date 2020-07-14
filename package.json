@@ -1,5 +1,5 @@
 {
-  "name": "@mbonig/sqs-redrive",
+  "name": "@matthewbonig/sqs-redrive",
   "description": "A redrive construct to use with an SQS queue and it's dead letter queue",
   "main": "lib/sqs-redrive.js",
   "types": "lib/sqs-redrive.d.ts",
