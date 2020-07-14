@@ -4,6 +4,7 @@
   "main": "lib/sqs-redrive.js",
   "types": "lib/sqs-redrive.d.ts",
   "version": "0.1.0",
+  "public": true,
   "bin": {
     "sqs-redrive-construct": "bin/sqs-redrive-construct.js"
   },
