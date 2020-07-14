@@ -12,7 +12,7 @@ test('Lambda exists', () => {
     let mainQueue = new Queue(testStack, 'main-queue');
     let deadLetterQueue = new Queue(testStack, 'dlq-queue');
 
-    new SqsRedrive(testStack, 'test-construct', {MainQueue: mainQueue, DeadLetterQueue: deadLetterQueue});
+    new SqsRedrive(testStack, 'test-construct', {mainQueue: mainQueue, deadLetterQueue: deadLetterQueue});
     // THEN
 
     expect(testStack).toHaveResource('AWS::Lambda::Function', {
@@ -37,7 +37,7 @@ test('Lambda has right policy to read/write queues', () => {
     let mainQueue = new Queue(testStack, 'main-queue');
     let deadLetterQueue = new Queue(testStack, 'dlq-queue');
 
-    new SqsRedrive(testStack, 'test-construct', {MainQueue: mainQueue, DeadLetterQueue: deadLetterQueue});
+    new SqsRedrive(testStack, 'test-construct', {mainQueue: mainQueue, deadLetterQueue: deadLetterQueue});
     // THEN
 
     expect(testStack).toHaveResource('AWS::IAM::Policy', {
@@ -94,7 +94,7 @@ test('Lambda uses passed props', () => {
     let deadLetterQueue = new Queue(testStack, 'dlq-queue');
 
     new SqsRedrive(testStack, 'test-construct', {
-        MainQueue: mainQueue, DeadLetterQueue: deadLetterQueue, LambdaProps: {
+        mainQueue: mainQueue, deadLetterQueue: deadLetterQueue, lambdaProps: {
             functionName: 'my-own-function-name',
             environment: {
                 should: 'exist'
