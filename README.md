@@ -28,8 +28,8 @@ const stack = new cdk.Stack(app, 'test-stack');
 let mainQueue = new Queue(stack, 'main-queue');
 let deadLetterQueue = new Queue(stack, 'dlq-queue');
 new SqsRedrive(stack, 'SqsRedriveConstructStack', {
-    MainQueue: mainQueue,
-    DeadLetterQueue: deadLetterQueue
+    mainQueue: mainQueue,
+    deadLetterQueue: deadLetterQueue
 });
 ```
 
@@ -41,8 +41,8 @@ What are the inputs to your constructs?
 
 |property|description|example
 |---|---|---
-|MainQueue|The destination queue for the messages.|```new Queue(stack, 'main-queue')```
-|DeadLetterQueue|The source queue of the messages.|```new Queue(stack, 'dead-letter-queue')```
+|mainQueue|The destination queue for the messages.|```new Queue(stack, 'main-queue')```
+|deadLetterQueue|The source queue of the messages.|```new Queue(stack, 'dead-letter-queue')```
 
 ## Design Notes
 
