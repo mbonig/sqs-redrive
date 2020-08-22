@@ -10,3 +10,4 @@ cdk.out
 .idea/
 dist/
 .jsii
+.parcel-cache/

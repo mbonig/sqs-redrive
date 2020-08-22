@@ -51,27 +51,27 @@
     "@types/node": "^10.17.27",
     "aws-cdk": "^1.51.0",
     "jest": "^24.9.0",
-    "jsii": "^0.22.0",
-    "jsii-pacmak": "^0.22.0",
+    "jsii": "^1.9.0",
+    "jsii-diff": "^1.9.0",
+    "jsii-pacmak": "^1.9.0",
+    "jsii-rosetta": "^1.9.0",
     "parcel-bundler": "^1.12.4",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.10.2",
     "typescript": "~3.7.2"
   },
   "dependencies": {
-    "@aws-cdk/aws-lambda-nodejs": "^1.51.0",
-    "@aws-cdk/aws-sqs": "^1.51.0",
-    "@aws-cdk/core": "^1.51.0",
-    "@aws-cdk/region-info": "^1.51.0"
+    "@aws-cdk/aws-lambda-nodejs": "^1.60.0",
+    "@aws-cdk/aws-sqs": "^1.60.0",
+    "@aws-cdk/core": "^1.60.0",
+    "constructs": "^3.0.2"
   },
   "peerDependencies": {
-    "@aws-cdk/core": "^1.51.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.51.0",
-    "@aws-cdk/aws-sqs": "^1.51.0",
-    "@aws-cdk/region-info": "^1.51.0",
-    "constructs": "^3.0.4"
+    "@aws-cdk/core": "^1.60.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.60.0",
+    "@aws-cdk/aws-sqs": "^1.60.0",
+    "constructs": "^3.0.2"
   },
-  "cdk-lambda": "/asset-output/index.js",
   "targets": {
     "cdk-lambda": {
       "context": "node",

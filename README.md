@@ -15,7 +15,7 @@ A Lambda function and related policy which moves SQS queue messages from one que
 
 ## Example
 
-This creates two external queues and then creates the Lambda to move from the DeadLetterQueue to the MainQueue
+This creates two external queues and then creates the Lambda to move from the deadLetterQueue to the mainQueue
 
 ```typescript
 import * as cdk from '@aws-cdk/core';
