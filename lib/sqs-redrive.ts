@@ -17,7 +17,7 @@ export class SqsRedrive extends Construct {
     const lambda = new NodejsFunction(this, `${id}-queue-redrive`, {
       functionName: id,
       ...props.lambdaProps,
-      entry: join(__dirname, 'sqs-redrive.queue-redrive.ts'),
+      entry: join(__dirname, 'sqs-redrive.queue-redrive'),
       environment: {
         QUEUE_URL: props.mainQueue.queueUrl,
         DLQ_URL: props.deadLetterQueue!.queueUrl,
