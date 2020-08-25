@@ -1,5 +1,3 @@
-import { DeleteMessageRequest, SendMessageRequest } from "aws-sdk/clients/sqs";
-
 const aws = require('aws-sdk');
 const sqs = new aws.SQS();
 export const handler = async (event: any) => {
@@ -24,7 +22,7 @@ export const handler = async (event: any) => {
       console.log(`RECEIVED ${DLQMessages.Messages.length} MESSAGES`);
       for (const message of DLQMessages.Messages) {
         // Send message to original queue
-        const outboundMessage: SendMessageRequest = {
+        const outboundMessage: any = {
           MessageBody: message.Body as string,
           QueueUrl: process.env.QUEUE_URL as string
         };
@@ -32,7 +30,7 @@ export const handler = async (event: any) => {
         await sqs.sendMessage(outboundMessage).promise();
         console.log('SEND MESSAGE SUCCEEDED');
         // Delete message from DLQ
-        const deleteParams: DeleteMessageRequest = {
+        const deleteParams: any = {
           QueueUrl: process.env.DLQ_URL as string,
           ReceiptHandle: message.ReceiptHandle as string
         };

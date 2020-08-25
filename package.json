@@ -46,10 +46,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@aws-cdk/assert": "^1.51.0",
+    "@aws-cdk/assert": "^1.60.0",
     "@types/jest": "^24.0.22",
-    "@types/node": "^10.17.27",
-    "aws-cdk": "^1.51.0",
+    "@types/node": "^10.17.28",
+    "aws-cdk": "^1.60.0",
     "jest": "^24.9.0",
     "jsii": "^1.9.0",
     "jsii-diff": "^1.9.0",
