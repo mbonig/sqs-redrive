@@ -68,6 +68,7 @@
   },
   "peerDependencies": {
     "@aws-cdk/core": "^1.60.0",
+    "@aws-cdk/aws-lambda": "^1.60.0",
     "@aws-cdk/aws-lambda-nodejs": "^1.60.0",
     "@aws-cdk/aws-sqs": "^1.60.0",
     "constructs": "^3.0.2"
