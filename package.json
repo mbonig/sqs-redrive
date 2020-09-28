@@ -57,7 +57,7 @@
     "jsii-rosetta": "^1.9.0",
     "parcel-bundler": "^1.12.4",
     "ts-jest": "^24.1.0",
-    "ts-node": "^8.10.2",
+    "ts-node": "^9.0.0",
     "typescript": "~3.7.2"
   },
   "dependencies": {
