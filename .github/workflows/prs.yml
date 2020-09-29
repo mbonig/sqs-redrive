@@ -6,7 +6,8 @@ on: pull_request
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    container:
+      image: jsii/superchain
     steps:
       - name: Get the version
         id: get_version
@@ -18,7 +19,6 @@ jobs:
           fetch-depth: 1
 
       - name: Build
-        uses: jsii/superchain
         run: |
           npm run build
 
