@@ -11,12 +11,12 @@ export interface SqsRedriveProps {
 }
 
 export class SqsRedrive extends Construct {
-  public lambda: IFunction;
+  public redriveFunction: IFunction;
 
   constructor(scope: Construct, id: string, props: SqsRedriveProps) {
     super(scope, id);
 
-    this.lambda = new NodejsFunction(this, `${id}-queue-redrive`, {
+    this.redriveFunction = new NodejsFunction(this, `${id}-queue-redrive`, {
       functionName: id,
       ...props.lambdaProps,
       entry: join(__dirname, 'sqs-redrive.queue-redrive.js'),
@@ -28,8 +28,8 @@ export class SqsRedrive extends Construct {
 
     });
 
-    props.deadLetterQueue.grantConsumeMessages(this.lambda);
-    props.mainQueue.grantSendMessages(this.lambda);
+    props.deadLetterQueue.grantConsumeMessages(this.redriveFunction);
+    props.mainQueue.grantSendMessages(this.redriveFunction);
 
   }
 }
