@@ -1,0 +1,28 @@
+---
+name: builds a PR
+
+on: pull_request
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: jsii/superchain
+    steps:
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output PR_NUMBER=$(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }')
+
+      - name: Checkout code
+        uses: actions/checkout@v1
+        with:
+          fetch-depth: 1
+
+      - name: Build
+        run: |
+          npm install
+          npm run tsc:build
+          npm run test
+          npm run build
+          npm run package
+
