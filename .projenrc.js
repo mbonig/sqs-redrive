@@ -12,7 +12,8 @@ const project = new AwsCdkConstructLibrary({
         twitter: 'mattbonig'
     },
     devDependencies: {
-        "parcel": "2.0.0-beta.1"
+        "parcel": "2.0.0-beta.1",
+        "yarn": "1.22.10"
     },
     keywords: [
         "cdk",

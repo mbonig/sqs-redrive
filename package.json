@@ -53,7 +53,8 @@
     "projen": "^0.3.84",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "yarn": "1.22.10"
   },
   "peerDependencies": {
     "@aws-cdk/aws-lambda": "^1.66.0",
@@ -177,18 +178,5 @@
     "twitter": "mattbonig",
     "announce": true
   },
-  "public": true,
-  "targets": {
-    "cdk-lambda": {
-      "context": "node",
-      "includeNodeModules": {
-        "aws-sdk": false
-      },
-      "sourceMap": false,
-      "minify": false,
-      "engines": {
-        "node": ">= 10"
-      }
-    }
-  }
+  "public": true
 }
