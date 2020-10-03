@@ -49,6 +49,7 @@
     "jsii-pacmak": "^1.11.0",
     "jsii-release": "^0.1.6",
     "json-schema": "^0.2.5",
+    "parcel": "2.0.0-beta.1",
     "projen": "^0.3.84",
     "standard-version": "^9.0.0",
     "ts-jest": "^26.1.0",
@@ -176,5 +177,18 @@
     "twitter": "mattbonig",
     "announce": true
   },
-  "public": true
+  "public": true,
+  "targets": {
+    "cdk-lambda": {
+      "context": "node",
+      "includeNodeModules": {
+        "aws-sdk": false
+      },
+      "sourceMap": false,
+      "minify": false,
+      "engines": {
+        "node": ">= 10"
+      }
+    }
+  }
 }
