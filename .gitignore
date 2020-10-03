@@ -41,14 +41,13 @@ jspm_packages/
 .jsii
 tsconfig.json
 .idea/
+.parcel-cache/
 !/package.json
 !/.npmignore
 !/LICENSE
 !/.projenrc.js
 !version.json
 !/.versionrc.json
-!/.github/workflows/build.yml
-!/.github/workflows/release.yml
 !/.mergify.yml
 !/.github/dependabot.yml
 !/src

@@ -1,31 +1,22 @@
 const {AwsCdkConstructLibrary} = require('projen');
 
-let cdkVersion = "1.66.0";
-let dependencies = {
-    "@aws-cdk/aws-lambda": cdkVersion,
-    "@aws-cdk/aws-lambda-nodejs": cdkVersion,
-    "@aws-cdk/aws-sqs": cdkVersion,
-    "@aws-cdk/core": cdkVersion
-};
 const project = new AwsCdkConstructLibrary({
+    name: "@matthewbonig/sqs-redrive",
     authorAddress: "matthew.bonig@gmail.com",
     authorName: "Matthew Bonig",
     authorOrganization: true,
+    cdkVersion: "1.66.0",
+    description: "A redrive construct to use with an SQS queue and it's dead letter queue",
     catalog: {
         announce: true,
         twitter: 'mattbonig'
     },
-    license: "MIT",
     keywords: [
         "cdk",
         "sqs",
         "dead-letter-queues",
         "redrive"
     ],
-    description: "A redrive construct to use with an SQS queue and it's dead letter queue",
-    dependencies: dependencies,
-    peerDependencies: dependencies,
-    cdkVersion: cdkVersion,
     bin: {
         "sqs-redrive-construct": "bin/sqs-redrive-construct.js"
     },
@@ -33,16 +24,24 @@ const project = new AwsCdkConstructLibrary({
         distName: 'mbonig.sqs-redrive',
         module: 'mbonig.sqs_redrive'
     },
-    name: "@matthewbonig/sqs-redrive",
-    repository: "https://github.com/mbonig/sqs-redrive"
+    repository: "https://github.com/mbonig/sqs-redrive",
+    license: "MIT",
+    buildWorkflow: false,
+    releaseWorkflow: false
 });
 
-project.gitignore.exclude(".idea/");
+project.gitignore.exclude(".idea/", ".parcel-cache/");
+project.addCdkDependencies("@aws-cdk/aws-lambda",
+    "@aws-cdk/aws-lambda-nodejs",
+    "@aws-cdk/aws-sqs",
+    "@aws-cdk/core"
+);
 
 project.addFields({
     "public": true,
     "main": "lib/sqs-redrive.js",
     "types": "lib/sqs-redrive.d.ts"
 });
+
 
 project.synth();
