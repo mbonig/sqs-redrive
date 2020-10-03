@@ -44,6 +44,19 @@ What are the inputs to your constructs?
 |mainQueue|The destination queue for the messages.|```new Queue(stack, 'main-queue')```
 |deadLetterQueue|The source queue of the messages.|```new Queue(stack, 'dead-letter-queue')```
 
+## Output Properties
+
+After constructed, you can gain access to the Lambda Function:
+
+```typescript
+const redrive = new SqsRedrive(stack, 'SqsRedriveConstructStack', {
+                    mainQueue: mainQueue,
+                    deadLetterQueue: deadLetterQueue
+                });
+
+// redrive.redriveFunction is an IFunction 
+```
+
 ## Design Notes
 
 This is early design and serves one very specific use-case. If you have suggestions on how to make this better, please open an [Issue in Github](https://github.com/mbonig/sqs-redrive/issues).
