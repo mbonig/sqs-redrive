@@ -1,4 +1,4 @@
-const aws = require('aws-sdk');
+const aws = require('aws-sdk');  // eslint-disable-line
 const sqs = new aws.SQS();
 export const handler = async (event: any) => {
   // Log the event argument for debugging and for use in local development.
@@ -9,7 +9,7 @@ export const handler = async (event: any) => {
       const receiveParams = {
         QueueUrl: process.env.DLQ_URL,
         MaxNumberOfMessages: 10,
-        WaitTimeSeconds: 1
+        WaitTimeSeconds: 1,
       };
       // Get messages from the DLQ
       // Continue looping until no more messages are left
@@ -24,7 +24,7 @@ export const handler = async (event: any) => {
         // Send message to original queue
         const outboundMessage: any = {
           MessageBody: message.Body as string,
-          QueueUrl: process.env.QUEUE_URL as string
+          QueueUrl: process.env.QUEUE_URL as string,
         };
         console.log(`SENDING: ${JSON.stringify(outboundMessage, null, 2)}`);
         await sqs.sendMessage(outboundMessage).promise();
@@ -32,7 +32,7 @@ export const handler = async (event: any) => {
         // Delete message from DLQ
         const deleteParams: any = {
           QueueUrl: process.env.DLQ_URL as string,
-          ReceiptHandle: message.ReceiptHandle as string
+          ReceiptHandle: message.ReceiptHandle as string,
         };
         console.log(`DELETING: ${JSON.stringify(deleteParams, null, 2)}`);
         await sqs.deleteMessage(deleteParams).promise();
