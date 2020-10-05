@@ -6430,9 +6430,9 @@ jsii-diff@^1.11.0:
     yargs "^16.0.3"
 
 jsii-docgen@^1.3.2:
-  version "1.4.45"
-  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.4.45.tgz#8091d345135e03772b86b887aeb2cd887c97ce6c"
-  integrity sha512-IMQiFp91UKpa55ROvSzwf46W0wGWbtg+LScv0pJLrQxxYk/3RrLaEWyi2cgmsJQjH7P9h2B/FiSeY/XSPz2GNg==
+  version "1.4.46"
+  resolved "https://registry.yarnpkg.com/jsii-docgen/-/jsii-docgen-1.4.46.tgz#3060f4c7c4284e8482253654f69861ddd466c9af"
+  integrity sha512-LCy0PMTYd2cRUbWC0TZKxfoE8U6gC0QVKmPOGZzunQuVXO0usF/cKMVOGNRqCBKozEzXqL8xvbl2ax/jgX/GbA==
   dependencies:
     "@jsii/spec" "^1.9.0"
     fs-extra "^9.0.0"
@@ -10185,3 +10185,8 @@ yargs@^16.0.3:
     string-width "^4.2.0"
     y18n "^5.0.1"
     yargs-parser "^20.0.0"
+
+yarn@1.22.10:
+  version "1.22.10"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.10.tgz#c99daa06257c80f8fa2c3f1490724e394c26b18c"
+  integrity sha512-IanQGI9RRPAN87VGTF7zs2uxkSyQSrSPsju0COgbsKQOOXr5LtcVPeyXWgwVa0ywG3d8dg6kSYKGBuYK021qeA==
