@@ -42,6 +42,8 @@ jspm_packages/
 tsconfig.json
 .idea/
 .parcel-cache/
+cdk.out/
+.cdk.staging/
 !/package.json
 !/.npmignore
 !/LICENSE

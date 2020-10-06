@@ -34,9 +34,9 @@ new SqsRedrive(scope: Construct, id: string, props: SqsRedriveProps)
 * **scope** (<code>[Construct](#aws-cdk-core-construct)</code>)  *No description*
 * **id** (<code>string</code>)  *No description*
 * **props** (<code>[SqsRedriveProps](#matthewbonig-sqs-redrive-sqsredriveprops)</code>)  *No description*
-  * **deadLetterQueue** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  *No description* 
-  * **mainQueue** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  *No description* 
-  * **lambdaProps** (<code>[NodejsFunctionProps](#aws-cdk-aws-lambda-nodejs-nodejsfunctionprops)</code>)  *No description* __*Optional*__
+  * **deadLetterQueue** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  The SQS Queue that holds dead-letters. 
+  * **mainQueue** (<code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code>)  The SQS Queue that will re-process the DLQ messages. 
+  * **lambdaProps** (<code>[NodejsFunctionProps](#aws-cdk-aws-lambda-nodejs-nodejsfunctionprops)</code>)  The underlying Lambda Function that does all the heavy lifting. __*Optional*__
 
 
 
@@ -58,9 +58,9 @@ Name | Type | Description
 
 Name | Type | Description 
 -----|------|-------------
-**deadLetterQueue** | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | <span></span>
-**mainQueue** | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | <span></span>
-**lambdaProps**? | <code>[NodejsFunctionProps](#aws-cdk-aws-lambda-nodejs-nodejsfunctionprops)</code> | __*Optional*__
+**deadLetterQueue** | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | The SQS Queue that holds dead-letters.
+**mainQueue** | <code>[IQueue](#aws-cdk-aws-sqs-iqueue)</code> | The SQS Queue that will re-process the DLQ messages.
+**lambdaProps**? | <code>[NodejsFunctionProps](#aws-cdk-aws-lambda-nodejs-nodejsfunctionprops)</code> | The underlying Lambda Function that does all the heavy lifting.<br/>__*Optional*__
 
 
 

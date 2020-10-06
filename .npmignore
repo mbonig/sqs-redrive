@@ -12,6 +12,10 @@ dist
 /coverage
 /test
 /.eslintrc.json
+.idea/
+.parcel-cache/
+cdk.out/
+.cdk.staging/
 !/lib
 !/lib/**/*.js
 !/lib/**/*.d.ts
