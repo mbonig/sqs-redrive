@@ -1,8 +1,8 @@
-import {join} from 'path';
-import {IFunction} from '@aws-cdk/aws-lambda';
-import {NodejsFunction, NodejsFunctionProps} from '@aws-cdk/aws-lambda-nodejs';
-import {IQueue} from '@aws-cdk/aws-sqs';
-import {Construct} from '@aws-cdk/core';
+import { join } from 'path';
+import { IFunction } from '@aws-cdk/aws-lambda';
+import { NodejsFunction, NodejsFunctionProps } from '@aws-cdk/aws-lambda-nodejs';
+import { IQueue } from '@aws-cdk/aws-sqs';
+import { Construct } from '@aws-cdk/core';
 
 /**
  * Props for the SqsRedrive construct creation
