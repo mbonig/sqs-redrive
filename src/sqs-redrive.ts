@@ -17,9 +17,20 @@ export interface SqsRedriveProps {
    */
   readonly mainQueue: IQueue;
   /**
-   * Props to hand to the underlying Lambda Function that does all the heavy lifting
+   * Props to hand to the underlying Lambda Function that does all the heavy lifting. These props are applied
+   * after the default functionName and entry file, but before the environment variables are setup:
+   * ```
+   * functionName: id,
+   * entry: join(__dirname, 'sqs-redrive.queue-redrive.ts'),
+   * ...props.lambdaProps,
+   * environment: {
+   *      QUEUE_URL: props.mainQueue.queueUrl,
+   *     DLQ_URL: props.deadLetterQueue!.queueUrl,
+   *     ...props?.lambdaProps?.environment,
+   *   },
+   * ```
    *
-   * Code originally lifted from here: https://www.stackery.io/blog/failed-sqs-messages/
+   * Code of the Lambda Function was originally lifted from here: https://www.stackery.io/blog/failed-sqs-messages/
    * */
   readonly lambdaProps?: NodejsFunctionProps;
 }
@@ -46,7 +57,6 @@ export class SqsRedrive extends Construct {
         DLQ_URL: props.deadLetterQueue!.queueUrl,
         ...props?.lambdaProps?.environment,
       },
-
     });
 
     props.deadLetterQueue.grantConsumeMessages(this.redriveFunction);
