@@ -44,6 +44,28 @@ What are the inputs to your constructs?
 |mainQueue|The destination queue for the messages.|```new Queue(stack, 'main-queue')```
 |deadLetterQueue|The source queue of the messages.|```new Queue(stack, 'dead-letter-queue')```
 
+## Overriding Lambda Props
+
+You can supply your own properties to the Lambda Function constructor. They're mashed together with some defaults. 
+Pay attention to the order:
+
+```typescript
+this.redriveFunction = new NodejsFunction(this, `${id}-queue-redrive`, {
+  functionName: id,
+  entry: join(__dirname, 'sqs-redrive.queue-redrive.ts'),
+  ...props.lambdaProps,
+  environment: {
+    QUEUE_URL: props.mainQueue.queueUrl,
+    DLQ_URL: props.deadLetterQueue!.queueUrl,
+    ...props?.lambdaProps?.environment,
+  },
+});
+```
+
+`functionName` and `entry` can be overridden. Environment variables will always be splatted with the two queue URLs so
+you never have to worry about specifying those (you can, of course, override them, but if you're going that far then
+why are you using this construct?).
+
 ## Output Properties
 
 After constructed, you can gain access to the Lambda Function:
