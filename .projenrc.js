@@ -5,7 +5,7 @@ const project = new AwsCdkConstructLibrary({
   authorAddress: "matthew.bonig@gmail.com",
   authorName: "Matthew Bonig",
   authorOrganization: true,
-  cdkVersion: "1.74.0",
+  cdkVersion: "1.75.0",
   description: "A redrive construct to use with an SQS queue and it's dead letter queue",
   catalog: {
     announce: true,
@@ -13,7 +13,8 @@ const project = new AwsCdkConstructLibrary({
   },
   devDeps: [
     "parcel",
-    "yarn"
+    "yarn",
+    "esbuild"
   ],
   keywords: [
     "cdk",
