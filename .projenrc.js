@@ -13,7 +13,8 @@ const project = new AwsCdkConstructLibrary({
   },
   devDeps: [
     "parcel",
-    "yarn"
+    "yarn",
+    "esbuild"
   ],
   keywords: [
     "cdk",
