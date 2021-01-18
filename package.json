@@ -33,7 +33,7 @@
     "organization": true
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.75.0",
+    "@aws-cdk/assert": "^1.85.0",
     "@types/jest": "^26.0.7",
     "@types/node": "^10.17.0",
     "@typescript-eslint/eslint-plugin": "^4.3.0",
@@ -59,17 +59,17 @@
     "yarn": "1.22.10"
   },
   "peerDependencies": {
-    "@aws-cdk/aws-lambda": "^1.75.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.75.0",
-    "@aws-cdk/aws-sqs": "^1.75.0",
-    "@aws-cdk/core": "^1.75.0",
+    "@aws-cdk/aws-lambda": "^1.85.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.85.0",
+    "@aws-cdk/aws-sqs": "^1.85.0",
+    "@aws-cdk/core": "^1.85.0",
     "constructs": "^3.2.27"
   },
   "dependencies": {
-    "@aws-cdk/aws-lambda": "^1.75.0",
-    "@aws-cdk/aws-lambda-nodejs": "^1.75.0",
-    "@aws-cdk/aws-sqs": "^1.75.0",
-    "@aws-cdk/core": "^1.75.0"
+    "@aws-cdk/aws-lambda": "^1.85.0",
+    "@aws-cdk/aws-lambda-nodejs": "^1.85.0",
+    "@aws-cdk/aws-sqs": "^1.85.0",
+    "@aws-cdk/core": "^1.85.0"
   },
   "bundledDependencies": [],
   "keywords": [
