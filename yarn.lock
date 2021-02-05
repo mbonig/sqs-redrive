@@ -4397,9 +4397,9 @@ es6-object-assign@^1.1.0:
   integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
 
 esbuild@^0.8.14:
-  version "0.8.14"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.14.tgz#e62c8304e85b74a3c88654aa21b030202d06d672"
-  integrity sha512-oeG0jVfG1KXM8ulwaq6Apt2STyXvOQHdHOTkN+HfNCMnXlBk4cscA0ZI5cvzVDKaBSJ0Fs6taxanqPJHvcxfIw==
+  version "0.8.41"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.41.tgz#d177f35354cf2b5a3eeddd8c927066fff82771b3"
+  integrity sha512-xejVYquAHrYaHkn/7Itm0aTAALvY1ZJTWMQ14Ww8wEeeg6B/8BN3rjDJ4LMbLoEdVEAFS2b5OZ3jPRYm8Ikm0g==
 
 escalade@^3.1.1:
   version "3.1.1"
