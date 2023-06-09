@@ -2,6 +2,15 @@
 
 This construct creates a Lambda function that you can use to move SQS messages from one queue to another. This is often used for moving Dead Letter Queue messages back to the original queue for reprocessing.
 
+# DEPRECATED
+
+AWS recently announced an update to the SQS API that builds a redrive directly into the service:
+
+[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_StartMessageMoveTask.html](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_StartMessageMoveTask.html)
+
+With this API update, this construct is no longer required and you should stop using it. I will no longer be making any updates to it.
+
+
 # This is a pre-release!
 
 This is a quick first-draft. All the options that will likely need to be added to accomodate a large
