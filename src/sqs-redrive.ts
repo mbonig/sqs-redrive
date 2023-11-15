@@ -1,8 +1,7 @@
-import { join } from 'path';
-import { IFunction } from '@aws-cdk/aws-lambda';
-import { NodejsFunction, NodejsFunctionProps } from '@aws-cdk/aws-lambda-nodejs';
-import { IQueue } from '@aws-cdk/aws-sqs';
-import { Construct } from '@aws-cdk/core';
+import { IFunction, FunctionOptions } from 'aws-cdk-lib/aws-lambda';
+import { IQueue } from 'aws-cdk-lib/aws-sqs';
+import { Construct } from 'constructs';
+import { SqsRedriveQueueRedriveFunction } from './sqs-redrive.queue-redrive-function';
 
 /**
  * Props for the SqsRedrive construct creation
@@ -32,7 +31,7 @@ export interface SqsRedriveProps {
    *
    * Code of the Lambda Function was originally lifted from here: https://www.stackery.io/blog/failed-sqs-messages/
    * */
-  readonly lambdaProps?: NodejsFunctionProps;
+  readonly lambdaProps?: FunctionOptions;
 }
 
 /**
@@ -48,9 +47,8 @@ export class SqsRedrive extends Construct {
   constructor(scope: Construct, id: string, props: SqsRedriveProps) {
     super(scope, id);
 
-    this.redriveFunction = new NodejsFunction(this, `${id}-queue-redrive`, {
+    this.redriveFunction = new SqsRedriveQueueRedriveFunction(this, `${id}-queue-redrive`, {
       functionName: id,
-      entry: join(__dirname, 'sqs-redrive.queue-redrive.ts'),
       ...props.lambdaProps,
       environment: {
         QUEUE_URL: props.mainQueue.queueUrl,

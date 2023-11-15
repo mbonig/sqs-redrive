@@ -61,7 +61,7 @@ Pay attention to the order:
 ```typescript
 this.redriveFunction = new NodejsFunction(this, `${id}-queue-redrive`, {
   functionName: id,
-  entry: join(__dirname, 'sqs-redrive.queue-redrive.ts'),
+  entry: join(__dirname, 'sqs-redrive.queue-redrive.lambda.ts'),
   ...props.lambdaProps,
   environment: {
     QUEUE_URL: props.mainQueue.queueUrl,
