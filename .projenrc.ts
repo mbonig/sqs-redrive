@@ -26,10 +26,6 @@ const project = new AwsCdkConstructLibrary({
   },
   deps: ['@aws-sdk/client-sqs'],
   bundledDeps: ['@aws-sdk/client-sqs'],
-  publishToPypi: {
-    distName: 'mbonig.sqs-redrive',
-    module: 'mbonig.sqs_redrive',
-  },
   repository: 'https://github.com/mbonig/sqs-redrive',
   license: 'MIT',
   buildWorkflow: true,
