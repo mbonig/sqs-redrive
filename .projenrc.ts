@@ -34,6 +34,7 @@ const project = new AwsCdkConstructLibrary({
   license: 'MIT',
   buildWorkflow: true,
   release: true,
+  majorVersion: 2,
 });
 
 const ignores = ['.idea/', '.parcel-cache/', 'cdk.out/', '.cdk.staging/'];
