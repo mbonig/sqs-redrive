@@ -1,6 +1,6 @@
-import '@aws-cdk/assert/jest';
-import { Queue } from '@aws-cdk/aws-sqs';
-import { App, Duration, Stack } from '@aws-cdk/core';
+import { App, Duration, Stack } from 'aws-cdk-lib';
+import { Template } from 'aws-cdk-lib/assertions';
+import { Queue } from 'aws-cdk-lib/aws-sqs';
 import { SqsRedrive } from '../src/sqs-redrive';
 
 describe('lambda', () => {
@@ -17,8 +17,8 @@ describe('lambda', () => {
     new SqsRedrive(testStack, 'test-construct', { mainQueue: mainQueue, deadLetterQueue: deadLetterQueue });
 
     // THEN
-
-    expect(testStack).toHaveResourceLike('AWS::Lambda::Function', {
+    const assert = Template.fromStack(testStack);
+    assert.hasResourceProperties('AWS::Lambda::Function', {
       Environment: {
         Variables: {
           QUEUE_URL: {
@@ -44,7 +44,8 @@ describe('lambda', () => {
     new SqsRedrive(testStack, 'test-construct', { mainQueue: mainQueue, deadLetterQueue: deadLetterQueue });
     // THEN
 
-    expect(testStack).toHaveResourceLike('AWS::IAM::Policy', {
+    const assert = Template.fromStack(testStack);
+    assert.hasResourceProperties('AWS::IAM::Policy', {
       PolicyDocument: {
         Statement: [
           {
@@ -110,7 +111,8 @@ describe('lambda', () => {
     });
     // THEN
 
-    expect(testStack).toHaveResourceLike('AWS::Lambda::Function', {
+    const assert = Template.fromStack(testStack);
+    assert.hasResourceProperties('AWS::Lambda::Function', {
       Environment: {
         Variables: {
           QUEUE_URL: {
