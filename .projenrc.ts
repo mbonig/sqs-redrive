@@ -32,8 +32,8 @@ const project = new AwsCdkConstructLibrary({
   },
   repository: 'https://github.com/mbonig/sqs-redrive',
   license: 'MIT',
-  buildWorkflow: false,
-  release: false,
+  buildWorkflow: true,
+  release: true,
 });
 
 const ignores = ['.idea/', '.parcel-cache/', 'cdk.out/', '.cdk.staging/'];
